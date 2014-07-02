@@ -1,0 +1,28 @@
+{
+  "name": "wait-for",
+  "version": "0.0.0",
+  "description": "Tiny callback counter",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grape": "^1.0.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KoryNunn/wait-for.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KoryNunn/wait-for/issues"
+  },
+  "homepage": "https://github.com/KoryNunn/wait-for",
+  "dependencies": {
+    "grape": "^1.0.0"
+  }
+}
