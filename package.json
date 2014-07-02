@@ -1,6 +1,6 @@
 {
   "name": "wait-for",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Tiny callback counter",
   "main": "index.js",
   "scripts": {
