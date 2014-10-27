@@ -10,12 +10,12 @@ module.exports = function waitFor(done){
         }
 
         return function(error){
+            pending--;
+            fn.apply(this, arguments);
+
             if(errored){
                 return;
             }
-
-            pending--;
-            fn.apply(this, arguments);
 
             if(error && !ignoreErrors){
                 errored = true;
