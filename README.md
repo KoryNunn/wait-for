@@ -22,6 +22,10 @@ done will only be called after all wrapped async calls are complete.
 
 If any task errors, no other tasks will be called or will call back. The error will be passed to ```after```:
 
-    after(function(error){
+    function done(error){
         // called if any error occurs, or if all tasks succeded
     });
+
+You can specify that the fn will not error (or you don't care if if does) by passing true as the first parameter:
+
+    after(true, function(){...})

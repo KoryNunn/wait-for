@@ -45,17 +45,17 @@ function callWithError(fn) {
     }, 10);
 }
 
-test('Collect errors', function(t){
+test('errors', function(t){
     t.plan(2);
 
     var ran = 0;
 
     var after = waitFor(function(error){
-            t.equal(ran, 1);
+            t.equal(ran, 2);
             t.equal(error, 'errored');
         });
 
-    callWithError(after(function(){
+    callWithError(after(true, function(){
         ran++;
         callWithError(after(function(){
             ran++;
