@@ -38,3 +38,30 @@ test('Wait for 3 nested timeouts', function(t){
         }),10);
     }),10);
 });
+
+function callWithError(fn) {
+    setTimeout(function(){
+        fn('errored');
+    }, 10);
+}
+
+test('Collect errors', function(t){
+    t.plan(2);
+
+    var ran = 0;
+
+    var after = waitFor(function(error){
+            t.equal(ran, 1);
+            t.equal(error, 'errored');
+        });
+
+    callWithError(after(function(){
+        ran++;
+        callWithError(after(function(){
+            ran++;
+            callWithError(after(function(){
+                ran++;
+            }));
+        }));
+    }));
+});
